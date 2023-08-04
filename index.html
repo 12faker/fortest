@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    //
+    <link rel="stylesheet" href="官网.css" />
+    <script src="官网.js"></script>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      li {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+        color: aliceblue;
+      }
+      body {
+        height: 3297px;
+      }
+      .slider {
+        position: relative;
+        margin: 0 auto;
+        width: 1300px;
+        height: 610px;
+      }
+      .slider-wrapper {
+        position: absolute;
+        top: 35px;
+        right: 104px;
+        font-size: 15px;
+        color: aliceblue;
+      }
+      .slider img {
+        display: block;
+        width: 1300px;
+        height: 610px;
+      }
+      .tab {
+        position: absolute;
+        top: 85px;
+        left: 355px;
+        color: white;
+        font-size: 18px;
+      }
+      .tab .tab1 {
+        float: left;
+        margin-right: 30px;
+      }
+      .tab .tab1 a {
+        text-shadow: 2px 2px 2px black;
+      }
+      .tab .tab1 ul {
+        display: none;
+      }
+      .tab .tab1 ul {
+        position: absolute;
+        margin-left: -13px;
+        margin-top: 34px;
+        padding: 10px 0px 25px 30px;
+        width: 206px;
+        border-top: 2px solid #318640;
+        background-color: rgba(241, 250, 249, 0.8);
+        line-height: 45px;
+        color: black;
+      }
+      .tab .tab1 ul li {
+        width: 170px;
+        height: 45px;
+        border-bottom: 1px solid #c8c6c7;
+      }
+      .tab .s8 {
+        position: absolute;
+        right: 113px;
+      }
+      .tab .s9 {
+        position: relative;
+        right: 16px;
+      }
+      /* tab栏显示 */
+      .tab .tab1 .active {
+        display: block;
+      }
+      /* tab变化*/
+      .change {
+        position: fixed;
+        top: 33px;
+        left: 50%;
+        margin-left: -279px;
+      }
+      .change1 {
+        position: fixed;
+        /* top:40%;
+    right:0px; */
+        top: 50%;
+        right: 0px;
+        margin-top: -160px;
+      }
+      .prev,
+      .next {
+        position: absolute;
+        top: 50%;
+        margin-top: -35px;
+        width: 70px;
+        height: 70px;
+        border-radius: 70px;
+        background-color: aqua;
+        color: aliceblue;
+        line-height: 70px;
+        font-size: 40px;
+        background: rgba(0, 0, 0, 0.3);
+      }
+      .prev {
+        left: 30px;
+        text-indent: 23px;
+      }
+      .next {
+        right: 30px;
+        text-indent: 25px;
+      }
+      .slider-middle {
+        margin: 0 auto;
+        width: 1300px;
+        height: 2000px;
+        background-color: rgb(254, 250, 245);
+      }
+      .slider-border {
+        position: fixed;
+        bottom: 68px;
+        right: 0px;
+        width: 120px;
+        height: 320px;
+        line-height: center;
+        color: aliceblue;
+        background-color: rgba(103, 147, 111, 0.8);
+      }
+      .slider-border li {
+        position: relative;
+        width: 100%;
+        height: 45px;
+        font-size: 14px;
+        border-bottom: 1px solid white;
+        transition: right 1s;
+      }
+      .slider-border li span {
+        margin-right: 10px;
+      }
+      .slider-border li img {
+        position: relative;
+        top: 10px;
+        width: 22px;
+        height: 22px;
+      }
+      .slider-border li .a1 {
+        margin-left: 20px;
+      }
+      .slider-border li .a2 {
+        position: relative;
+        top: 4px;
+        height: 14px;
+      }
+      /*悬浮过渡 */
+      .slider-border li:hover {
+        right: 15px;
+        width: 135px;
+        background-color: #f6bc5b;
+      }
+      /* tab栏固定 */
+      .fix {
+        position: fixed;
+        top: 35px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slider">
+      <img
+        src="http://www.gzhu.edu.cn/__local/F/52/69/0F3C6DAF438535ECD26FEF5E873_AA571AE5_2A12B.jpg"
+        class="imgs"
+        alt=""
+      />
+      <a href="#" class="prev"> &lt;</a>
+      <a href="#" class="next"> &gt;</a>
+      <span class="slider-wrapper"><a>新闻网 </a>|<a> ENGLISH</a></span>
+      <ul class="tab">
+        <li class="tab1">
+          <a href="">学校概况</a>
+          <ul class="1">
+            <li>学校简介</li>
+            <li>现任领导</li>
+            <li>学校章程</li>
+            <li>校训校徽校歌</li>
+            <li>校园风景</li>
+          </ul>
+        </li>
+
+        <li class="tab1">
+          <a href="">组织机构</a>
+          <ul class="2">
+            <li>学院(部)</li>
+            <li>管理服务机构</li>
+            <li>科研单位</li>
+            <li>直属单位</li>
+          </ul>
+        </li>
+
+        <li class="tab1">
+          <a href="">师资队伍</a>
+          <ul class="3">
+            <li>队伍概况</li>
+            <li>人才招聘</li>
+            <li>杰出人才</li>
+          </ul>
+        </li>
+
+        <li class="tab1">
+          <a href="">人才培养</a>
+          <ul class="4">
+            <li>本科生培养</li>
+            <li>研究生培养</li>
+            <li>留学生培养</li>
+            <li>继续教育</li>
+          </ul>
+        </li>
+
+        <li class="tab1">
+          <a href="">招生就业</a>
+          <ul class="5">
+            <li>本科生招生</li>
+            <li>研究生招生</li>
+            <li>成人教育招生</li>
+            <li>留学生招生</li>
+            <li>就业指导</li>
+          </ul>
+        </li>
+
+        <li class="tab1">
+          <a href="">科学研究</a>
+          <ul class="6">
+            <li>科学研究简况</li>
+            <li>重点科研平台</li>
+            <li>学术期刊</li>
+          </ul>
+        </li>
+
+        <li class="tab1">
+          <a href="">学科建设</a>
+          <ul class="7">
+            <li>重点学科</li>
+            <li>博士点</li>
+            <li>学术硕士点</li>
+            <li>专业硕士点</li>
+          </ul>
+        </li>
+
+        <li class="tab1">
+          <a href="">人才招聘</a>
+          <ul class="s8">
+            <li>高层次人才招聘公告</li>
+            <li>博士后招聘公告</li>
+            <li>其他系列招聘公告</li>
+          </ul>
+        </li>
+
+        <li class="tab1">
+          <a href="">合作交流</a>
+          <ul class="s9">
+            <li>国际交流与合作</li>
+            <li>港澳台交流与合作</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="slider-middle"></div>
+    <ul class="slider-border">
+      <li>
+        <span class="a1"
+          ><img src="http://www.gzhu.edu.cn/images/s1.png" alt="" /></span
+        ><span class="a2">数字广大</span>
+      </li>
+      <li>
+        <span class="a1"
+          ><img src="http://www.gzhu.edu.cn/images/s2.png " alt="" /></span
+        ><span class="a2">个人邮箱</span>
+      </li>
+      <li>
+        <span class="a1"
+          ><img src="http://www.gzhu.edu.cn/images/s3.png " alt="" /></span
+        ><span class="a2">图 书 馆</span>
+      </li>
+      <li>
+        <span class="a1"
+          ><img src="http://www.gzhu.edu.cn/images/s5.png " alt="" /></span
+        ><span class="a2">招标信息</span>
+      </li>
+      <li>
+        <span class="a1"
+          ><img src="http://www.gzhu.edu.cn/images/s6.png" alt="" /></span
+        ><span class="a2">热门站点</span>
+      </li>
+      <li>
+        <span class="a1"
+          ><img src="http://www.gzhu.edu.cn/images/s7.png" alt="" /></span
+        ><span class="a2">校友之窗</span>
+      </li>
+      <li>
+        <span class="a1"
+          ><img src="http://www.gzhu.edu.cn/images/s8.png" alt="" /></span
+        ><span class="a2">领导信箱</span>
+      </li>
+    </ul>
+    <!-- ----------------------------------------------------------- -->
+    <script>
+      const sliderimg = [
+        {
+          url: "http://www.gzhu.edu.cn/__local/F/52/69/0F3C6DAF438535ECD26FEF5E873_AA571AE5_2A12B.jpg",
+        },
+        {
+          url: "http://www.gzhu.edu.cn/__local/B/02/34/6DF30ED27F5841B94FD3FADCABF_68481D62_830A1.png",
+        },
+        {
+          url: "http://www.gzhu.edu.cn/__local/9/03/4D/3BF385EF546044A2E2E47B4872C_CD5FA053_87F83.jpg",
+        },
+        {
+          url: "http://www.gzhu.edu.cn/__local/1/31/AC/DE8B44565622267E76750F8FB13_BE734289_26D3A.jpg",
+        },
+        {
+          url: "http://www.gzhu.edu.cn/__local/D/26/2F/88540B85D2C5262B10130569966_7653E3A2_22D1A.jpg",
+        },
+      ];
+      const img1 = document.querySelector(".slider .imgs");
+      const next = document.querySelector(".next");
+      const prev = document.querySelector(".prev");
+      let i = 0;
+      next.addEventListener("click", function () {
+        i++;
+        if (i >= sliderimg.length) {
+          i = 0;
+        }
+        toggle();
+      });
+
+      prev.addEventListener("click", function () {
+        i--;
+        if (i < 0) {
+          i = sliderimg.length - 1;
+        }
+        toggle();
+      });
+      function toggle() {
+        img1.src = sliderimg[i].url;
+      }
+
+      let timerId = setInterval(function () {
+        next.click();
+      }, 3000);
+      const slider = document.querySelector(".slider");
+      //关闭定时器
+      slider.addEventListener("mouseenter", function () {
+        clearInterval(timerId);
+      });
+      //开启定时器
+      slider.addEventListener("mouseleave", function () {
+        clearInterval(timerId);
+        timerId = setInterval(function () {
+          next.click();
+        }, 3000);
+      });
+      //-----------------------------------------------------
+      //
+      const tab = document.querySelectorAll(".tab a");
+      for (let i = 0; i < tab.length; i++) {
+        tab[i].addEventListener("mouseenter", function () {
+          // document.querySelector(".tab .active").classList.remove("active");
+          document
+            .querySelector(`.tab li:nth-child(${i + 1}) ul`)
+            .classList.add("active");
+        });
+        tab[i].addEventListener("mouseleave", function () {
+          document.querySelector(".tab .active").classList.remove("active");
+        });
+      }
+      // --------------------------------------------------
+      window.addEventListener("scroll", function () {
+        const n = document.documentElement.scrollTop;
+        const tab = document.querySelector(".tab");
+        const sliderborder = document.querySelector(".slider-border");
+        if (n >= 86) {
+          tab.classList.add("change");
+        } else {
+          tab.classList.remove("change");
+        }
+
+        if (n >= 770) {
+          sliderborder.classList.add("change1");
+        } else {
+          sliderborder.classList.remove("change1");
+        }
+      });
+    </script>
+  </body>
+</html>
